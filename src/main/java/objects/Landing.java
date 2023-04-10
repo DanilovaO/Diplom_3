@@ -11,8 +11,7 @@ public class Landing {
     WebDriverWait wait;
 
 
-    public Landing(WebDriver driver, WebDriverWait wait)
-    {
+    public Landing(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
         this.wait = wait;
 
@@ -24,9 +23,7 @@ public class Landing {
     public void open() {
         driver.get(landingUrl);
     }
-    public void reopen() {
-        driver.get(landingUrl);
-    }
+
 
     // кнопка верхняя Личный кабинет
     By accountButton = By.xpath(".//*[text()='Личный Кабинет']");
@@ -34,14 +31,16 @@ public class Landing {
     public void clickAccountButton() {
         driver.findElement(accountButton).click();
     }
+
     public void waitElement(By element) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 
     }
+
     // кнопка верхняя конструктор
     By constructorButton = By.xpath(".//*[text()='Конструктор']/..");
 
-    public void clickСonstructorButton() {
+    public void clickConstructorButton() {
         driver.findElement(constructorButton).click();
     }
 
@@ -51,28 +50,32 @@ public class Landing {
     public void clickSignInButton() {
         driver.findElement(signInButton).click();
     }
+
     public void findSignInButton() {
         driver.findElement(signInButton);
     }
-// кнопка Булки
 
-    By bunButton = By.xpath(".//*[text()='Булки']/..");
+    // кнопка Булки
+
+    public By bunButton = By.xpath(".//*[text()='Булки']/..");
+
 
     public void clickBunButton() {
         driver.findElement(bunButton).click();
-    }
 
+    }
 
 // кнопка Соусы
 
-    By sauceButton = By.xpath(".//*[text()='Соусы']/..");
+    public By sauceButton = By.xpath(".//*[text()='Соусы']/..");
 
     public void clickSauceButton() {
         driver.findElement(sauceButton).click();
     }
 
-// кнопка Начинки
-    By fillingButton = By.xpath(".//*[text()='Начинки']/..");
+
+    // кнопка Начинки
+    public By fillingButton = By.xpath(".//*[text()='Начинки']/..");
 
     public void clickFillingButton() {
         driver.findElement(fillingButton).click();

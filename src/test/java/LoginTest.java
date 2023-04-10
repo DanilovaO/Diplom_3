@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginTest {
     public WebDriver driver;
-    //оюъявление стриницы
+    //объявление стриницы
     public Landing landingPage;
     public Login loginPage;
     public Register registerPage;
@@ -88,7 +88,7 @@ public class LoginTest {
     // тест проверяет «Войти в аккаунт» на главной,
     public void testSignInAccount() {
         // переход на главный экран
-        landingPage.clickСonstructorButton();
+        landingPage.clickConstructorButton();
         //клик на кнопку войти в аккаунт
         landingPage.clickSignInButton();
         // клик на кнопку Личный кабинет
@@ -103,7 +103,7 @@ public class LoginTest {
     // тест проверяет «Войти в аккаунт» на главной,
     public void testLoginRegisterAccount() {
         // переход на главный экран
-        landingPage.clickСonstructorButton();
+        landingPage.clickConstructorButton();
         landingPage.clickAccountButton();
         //клик на зарегистрироваться
         loginPage.clickRegisterButton();
@@ -121,7 +121,7 @@ public class LoginTest {
     @Test
     public void testForgotEmailAccount() {
         // переход на главный экран
-        landingPage.clickСonstructorButton();
+        landingPage.clickConstructorButton();
         landingPage.clickAccountButton();
         //клик на забыли пароль
         loginPage.clickRestorePasswordButton();

@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProfileTest {
     public WebDriver driver;
-    //оюъявление стриницы
+    //объявление стриницы
     public Landing landingPage;
     public Login loginPage;
     public Register registerPage;
@@ -72,7 +72,7 @@ public class ProfileTest {
         registerPage.clickPasswordField();
         registerPage.addPasswordField(password);
         registerPage.clickOkRegisterButton();
-// клик на кнопку Личный кабинет
+        // клик на кнопку Личный кабинет
         landingPage.clickAccountButton();
         loginPage.clickEmailField();
         loginPage.addEmailField(email);
@@ -83,7 +83,7 @@ public class ProfileTest {
     }
 
     @Test
-    // тест проверяет Проверь переход по клику на «Личный кабинет».
+    // тест проверяет переход по клику на «Личный кабинет».
     public void test2PersonalAccount() throws InterruptedException {
         // клик на кнопку Личный кабинет
         landingPage.clickAccountButton();
@@ -99,7 +99,7 @@ public class ProfileTest {
         // клик на кнопку Личный кабинет
         landingPage.clickAccountButton();
         profilePage.waitElement(profilePage.profileButton);
-        landingPage.clickСonstructorButton();
+        landingPage.clickConstructorButton();
         //убедимся, что произошел переход
         landingPage.findSignInButton();
 

@@ -1,3 +1,7 @@
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +24,7 @@ public class ConstructorTest {
     public WebDriver driver;
     WebDriverWait wait;
 
-    //оюъявление стриницы
+    //объявление стриницы
     public Landing landingPage;
 
 
@@ -46,31 +50,42 @@ public class ConstructorTest {
         driver = new FirefoxDriver();*/
 
 
+    private static final By currentMenu = By.xpath("//div[contains(@class,'tab_tab_type_current__2BEPc')]");
+
+    @Step ("Проверяем текст текущего меню")
+    public String getTextFromSelectedMenu(){
+    return
+            driver.findElement(currentMenu).getText();
+    }
+
     @Test
-        // тест проверяет аботают переходы к разделу «Соусы»,,
-        public void testSouse() {
+    @Severity(SeverityLevel.NORMAL)
+        @DisplayName("проверяем булки")
+    public void menuBunlsActiveByClick(){
         landingPage.open();
         landingPage.clickSauceButton();
-        assert driver.findElement(By.xpath(".//*[text()='Флюоресцентная булка R2-D3']")).isDisplayed();
-    }
-    @Test
-    // тест проверяет аботают переходы к разделу «Начинки»,,
-    public void testFilling() {
-        landingPage.open();
-        landingPage.clickFillingButton();
-        assert driver.findElement(By.xpath(".//*[text()='Флюоресцентная булка R2-D3']")).isDisplayed();
-        assert driver.findElement(By.xpath(".//*[text()='Соус Spicy-X']")).isDisplayed();
-    }
-    @Test
-    // тест проверяет аботают переходы к разделу «Булки»,
-    public void testBun() {
-        landingPage.open();
-        landingPage.clickFillingButton();
         landingPage.clickBunButton();
-        assert driver.findElement(By.xpath(".//*[text()='Мясо бессмертных моллюсков Protostomia']")).isDisplayed();
-        assert driver.findElement(By.xpath(".//*[text()='Соус Spicy-X']")).isDisplayed();
-
+        Assert.assertEquals("Булки",getTextFromSelectedMenu());
     }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("проверяем cоусы")
+    public void menuSauceActiveByClick(){
+        landingPage.open();
+        landingPage.clickSauceButton();
+        Assert.assertEquals("Соусы",getTextFromSelectedMenu());
+    }
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("проверяем Начинки")
+    public void menuFillingActiveByClick(){
+        landingPage.open();
+        landingPage.clickFillingButton();
+        Assert.assertEquals("Начинки",getTextFromSelectedMenu());
+    }
+
+
     @After
     public void teardown() {
         driver.quit(); // Закрыть браузер
