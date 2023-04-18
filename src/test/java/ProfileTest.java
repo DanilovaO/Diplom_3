@@ -6,14 +6,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.junit.Test;
 import org.junit.Before;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class ProfileTest {
     public WebDriver driver;
-    //объявление стриницы
     public Landing landingPage;
     public Login loginPage;
     public Register registerPage;
@@ -47,13 +44,13 @@ public class ProfileTest {
 
         // инициализировали страницы
         landingPage = new Landing(driver, wait);
-        loginPage = new Login(driver,wait);
+        loginPage = new Login(driver, wait);
         registerPage = new Register(driver);
         forgotPasswordPage = new ForgotPassword(driver);
         profilePage = new Profile(driver, wait);
 
         name = RandomStringUtils.randomAlphanumeric(7);
-        email = name +"@test.ru";
+        email = name + "@test.ru";
         password = RandomStringUtils.randomAlphanumeric(7);
         /* драйвер для браузера Yandex
          */
@@ -91,11 +88,11 @@ public class ProfileTest {
         profilePage.findProfileButton();
 
 
-
     }
+
     @Test
     //Переход из личного кабинета в конструктор
-    public void test3PersonalAccount()  throws InterruptedException {
+    public void test3PersonalAccount() throws InterruptedException {
         // клик на кнопку Личный кабинет
         landingPage.clickAccountButton();
         profilePage.waitElement(profilePage.profileButton);

@@ -14,7 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginTest {
     public WebDriver driver;
-    //объявление стриницы
     public Landing landingPage;
     public Login loginPage;
     public Register registerPage;
@@ -45,12 +44,12 @@ public class LoginTest {
         driver = new FirefoxDriver();*/
 
         // инициализировали страницу Landing
-        landingPage = new Landing(driver,wait);
-        loginPage = new Login(driver,wait);
+        landingPage = new Landing(driver, wait);
+        loginPage = new Login(driver, wait);
         registerPage = new Register(driver);
         forgotPassword = new ForgotPassword(driver);
         name = RandomStringUtils.randomAlphanumeric(7);
-        email = name +"@test.ru";
+        email = name + "@test.ru";
         password = RandomStringUtils.randomAlphanumeric(7);
         /* драйвер для браузера Yandex
          */
@@ -84,6 +83,7 @@ public class LoginTest {
         loginPage.addPasswordField(password);
         loginPage.clickLoginButton();
     }
+
     @Test
     // тест проверяет «Войти в аккаунт» на главной,
     public void testSignInAccount() {
@@ -98,6 +98,7 @@ public class LoginTest {
         loginPage.addPasswordField(password);
         loginPage.clickLoginButton();
     }
+
     //вход через кнопку в форме регистрации
     @Test
     // тест проверяет «Войти в аккаунт» на главной,
@@ -108,7 +109,7 @@ public class LoginTest {
         //клик на зарегистрироваться
         loginPage.clickRegisterButton();
         //клик на кнопку войти
-       registerPage.clickLoginRegisterField();
+        registerPage.clickLoginRegisterField();
         // клик на кнопку Личный кабинет
         loginPage.clickEmailField();
         loginPage.addEmailField(email);

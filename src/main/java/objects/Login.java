@@ -8,7 +8,7 @@ public class Login {
     WebDriver driver;
     WebDriverWait wait;
 
-    public Login(WebDriver driver, WebDriverWait wait){
+    public Login(WebDriver driver, WebDriverWait wait) {
 
         this.driver = driver;
         this.wait = wait;
@@ -23,8 +23,8 @@ public class Login {
         driver.findElement(registerButton).click();
     }
 
-   // кнопка Восстановить пароль
-   By restorePasswordButton = By.xpath(".//*[text()='Восстановить пароль']");
+    // кнопка Восстановить пароль
+    By restorePasswordButton = By.xpath(".//*[text()='Восстановить пароль']");
 
     public void clickRestorePasswordButton() {
 
@@ -40,18 +40,21 @@ public class Login {
 
     // поле Вход
 
-  By emailField = By.xpath(".//*[text()='Email']/../input");
+    By emailField = By.xpath(".//*[text()='Email']/../input");
+
     // найти и кликнуть на поле Email
-  public void clickEmailField() {
-       driver.findElement(emailField).click();
+    public void clickEmailField() {
+        driver.findElement(emailField).click();
     }
+
     // Ввести Email
     public void addEmailField(String email) {
         driver.findElement(emailField).sendKeys(email);
     }
     //  поле Password
 
-    By passwordField = By.xpath(".//*[text()='Пароль']/../input");;
+    By passwordField = By.xpath(".//*[text()='Пароль']/../input");
+    ;
 
     // найти и кликнуть на поле Password
     public void clickPasswordField() {
@@ -70,6 +73,7 @@ public class Login {
 
         driver.findElement(loginButton).click();
     }
+
     public void findLoginButton() {
 
         driver.findElement(loginButton);

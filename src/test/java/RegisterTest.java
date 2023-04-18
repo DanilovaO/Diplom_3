@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RegisterTest {
     public WebDriver driver;
-    WebDriverWait wait;    //оюъявление стриницы
+    WebDriverWait wait;
     public Landing landingPage;
     public Login loginPage;
     public Register registerPage;
@@ -42,11 +42,11 @@ public class RegisterTest {
         driver = new FirefoxDriver();*/
 
         // инициализировали страницу Landing
-        landingPage = new Landing(driver,wait);
-        loginPage = new Login(driver,wait);
+        landingPage = new Landing(driver, wait);
+        loginPage = new Login(driver, wait);
         registerPage = new Register(driver);
         name = RandomStringUtils.randomAlphanumeric(7);
-        email = name +"@test.ru";
+        email = name + "@test.ru";
         password = RandomStringUtils.randomAlphanumeric(7);
         /* драйвер для браузера Yandex
          */

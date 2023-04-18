@@ -5,14 +5,8 @@ import io.qameta.allure.junit4.DisplayName;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import objects.ForgotPassword;
 import objects.Landing;
-import objects.Login;
-import objects.Register;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.junit.Test;
@@ -24,9 +18,7 @@ public class ConstructorTest {
     public WebDriver driver;
     WebDriverWait wait;
 
-    //объявление стриницы
     public Landing landingPage;
-
 
     @Before
     public void before() {

@@ -45,7 +45,7 @@ public class Landing {
     }
 
     // кнопка войти в аккаунт
-    By signInButton = By.className("button_button__33qZ0");
+    By signInButton = By.className  ("button_button__33qZ0");
 
     public void clickSignInButton() {
         driver.findElement(signInButton).click();
